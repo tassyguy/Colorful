@@ -14,6 +14,7 @@
 		871CF25B1CA669DE0091D089 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871CF2591CA669DE0091D089 /* LaunchScreen.storyboard */; };
 		871CF2661CA669E00091D089 /* ColorfulTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CF2651CA669E00091D089 /* ColorfulTests.swift */; };
 		871CF2711CA669E00091D089 /* ColorfulUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CF2701CA669E00091D089 /* ColorfulUITests.swift */; };
+		871CF2811CA6770F0091D089 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871CF2801CA6770F0091D089 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		871CF26C1CA669E00091D089 /* ColorfulUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorfulUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		871CF2701CA669E00091D089 /* ColorfulUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulUITests.swift; sourceTree = "<group>"; };
 		871CF2721CA669E00091D089 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		871CF27E1CA6762F0091D089 /* Pulse2SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pulse2SDK.framework; path = ../../../Desktop/Pulse2SDK.framework; sourceTree = "<group>"; };
+		871CF2801CA6770F0091D089 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		871CF2821CA677100091D089 /* Colorful.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Colorful.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				871CF2811CA6770F0091D089 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +82,8 @@
 		871CF2441CA669D90091D089 = {
 			isa = PBXGroup;
 			children = (
+				871CF2801CA6770F0091D089 /* HealthKit.framework */,
+				871CF27E1CA6762F0091D089 /* Pulse2SDK.framework */,
 				871CF24F1CA669DB0091D089 /* Colorful */,
 				871CF2641CA669DF0091D089 /* ColorfulTests */,
 				871CF26F1CA669E00091D089 /* ColorfulUITests */,
@@ -97,6 +104,7 @@
 		871CF24F1CA669DB0091D089 /* Colorful */ = {
 			isa = PBXGroup;
 			children = (
+				871CF2821CA677100091D089 /* Colorful.entitlements */,
 				871CF2501CA669DC0091D089 /* AppDelegate.swift */,
 				871CF2521CA669DD0091D089 /* ViewController.swift */,
 				871CF2541CA669DD0091D089 /* Main.storyboard */,
@@ -193,6 +201,12 @@
 				TargetAttributes = {
 					871CF24C1CA669DB0091D089 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 94N6493U2E;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					871CF2601CA669DF0091D089 = {
 						CreatedOnToolsVersion = 7.2;
@@ -397,12 +411,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Colorful/Colorful.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Colorful/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SimonPhillips.iOS.Colorful;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -410,12 +427,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Colorful/Colorful.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Colorful/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SimonPhillips.iOS.Colorful;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
